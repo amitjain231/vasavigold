@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.phonegap.vasavigold.live"
+        versionCode="1" 
+        version   = "1.0.0">
+
+
+    <name>Vasavi Gold</name>
+
+    <description>
+        Vasavi Gold is a leading wholesaler of gold bar 999 purity in spot market primarily based in Eluru, Andhra Pradesh
+    </description>
+
+    <author href="http://www.magicbul.com" email="amitjain231@gmail.com">
+        Amit kumar Jain
+    </author>
+
+	<gap:platform name="ios" />
+	<gap:platform name="android" />
+	<gap:platform name="blackberry" />
+	<gap:platform name="winphone" />
+
+	<icon src="icon.png" gap:platform="android" gap:density="ldpi" />
+	<icon src="icon.png" gap:platform="android" gap:density="mdpi" />
+	<icon src="icon.png" gap:platform="android" gap:density="hdpi" />
+	<icon src="icon.png" gap:platform="android" gap:density="xhdpi" />
+	
+	<!-- Preferences Permissions, Phonegap version to build -->
+	<preference name="permissions" value="none"/>
+	<preference name="phonegap-version" value="3.6.3" />	
+	
+	<!-- Required only Notification permission -->
+	<feature name="http://api.phonegap.com/1.0/notification"/>
+
+</widget>

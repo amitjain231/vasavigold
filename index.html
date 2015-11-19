@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+	<title>Vasavi Gold</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	
+	<!--  Needs to be updated before publishing  End -->
+	
+	<!-- Jquery Mobile JS and CSS -->
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+	<link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css" />
+	<link rel="stylesheet" href="css/jquery.mobile.theme-1.4.5.min.css" />
+	<link rel="shortcut icon" 	type="image/x-icon" href="/favicon.ico" >
+	<link rel="icon" 					type="image/x-icon" href="/favicon.ico" >
+	
+	
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+	
+	
+	<!-- Custom JS and css -->
+	<link rel="stylesheet" href="css/vgPGGetMobileRates.css?ts=20151118151515" />
+	<!-- <link rel='stylesheet' type='text/css' href='css/rupee.css'></link> -->
+	<script src="./js/vgPGGetMobileRates.js?ts=20151118151515"></script>
+
+	
+</head> 
+
+<body onload="initVGMobileApp();">
+	<input type="hidden" id="id_vg_hid_mob_param1" 		value="0" />
+	<input type="hidden" id="id_vg_hid_mob_param2" 		value="0" />
+	<input type="hidden" id="id_vg_hid_mob_param3" 		value="0" />
+	<input type="hidden" id="id_vg_hid_mob_param4" 		value="0" />
+	<input type="hidden" id="id_vg_hid_mob_param5" 		value="0" />
+	<input type="hidden" id="id_vg_hid_mob_param6" 		value="0" />
+	<input type="hidden" id="id_vg_hid_mob_param7" 		value="0" />
+	<input type="hidden" id="id_vg_hid_mob_param8" 		value="0" />
+	<input type="hidden" id="id_vg_hid_mob_param9" 		value="0" />
+	<input type="hidden" id="id_vg_hid_mob_param10" 		value="0" />
+	
+	
+<div data-role="page" id="mainpage" data-theme="b"   class="cl_div_content">
+
+
+	<div data-role="header" data-theme="a" style='background-color:#F7F763; height: 50px;'>
+		<div style="text-align:center;">
+			
+			<img  src="images/vg_logo_mobile.jpg"   />
+			<!--
+			<table style="width: 100%" >
+			<tr>
+				<td width=25%>
+				<!--<img src="images/apr_logo.png"   /> 
+				
+				</td>
+				<td width=75%>
+				<img src="images/vg_logo_mobile.jpg"   />
+				
+				<!--
+				<span style="text-align: center;font-size: 24pt;color: #9C4E0B;"> VASAVI GOLD</span>
+			
+				</td>
+			</tr>
+			</table>
+			-->
+		</div>
+	</div>
+	
+	
+	<div data-role="content" style="border-radius:10px;">	
+		
+		<div class="ui-grid-a" id="id_div_grid_wrapper">
+				<!-- Default it to No Steaming -->
+				<!-- <div class='cl_stream_off' > <span style='color:#E35E1B'>oops!!! </span>  No Data Connection... </div> -->
+			
+				<div class="ui-grid-b cl_div_grid_comex" id="id_div_grid_comex">
+					<div class='ui-block-a cl_td_comex_label' >COMEX</div>	
+					<div class='ui-block-b cl_td_comex_label' >BID</div>	
+					<div class='ui-block-c cl_td_comex_label' >ASK</div>	
+
+					<div class='ui-block-a cl_td_comex_data cl_div_comex_gold  cl_td_comex_label2'>Gold </div>	
+					<div class='ui-block-b cl_td_comex_data cl_div_comex_gold'> <span id="id_span_data_comex_g_bid"></span></div>	
+					<div class='ui-block-c cl_td_comex_data cl_div_comex_gold'><span id="id_span_data_comex_g_ask"></span></div>
+				
+					<div class='ui-block-a cl_td_comex_data cl_div_comex_silver cl_td_comex_label2'>Silver </div>	
+					<div class='ui-block-b cl_td_comex_data cl_div_comex_silver'> <span id="id_span_data_comex_s_bid"></span></div>	
+					<div class='ui-block-c cl_td_comex_data cl_div_comex_silver'><span id="id_span_data_comex_s_ask"></span></div>	
+				
+					<div class='ui-block-a cl_td_comex_data cl_div_comex_usdinr cl_td_comex_label2'>USDINR </div>	
+					<div class='ui-block-b cl_td_comex_data cl_div_comex_usdinr'> <span id="id_span_data_comex_u_bid"></span></div>	
+					<div class='ui-block-c cl_td_comex_data cl_div_comex_usdinr'><span id="id_span_data_comex_u_ask"></span></div>
+				</div>
+				<br/>
+				<div class="ui-grid-b cl_div_grid_symbol" id="id_div_grid_symbol">
+					<div class='ui-block-a cl_td_symbol_label' >SYMBOL</div>	
+					<div class='ui-block-b cl_td_symbol_label' >BID</div>	
+					<div class='ui-block-c cl_td_symbol_label' >ASK</div>
+						
+					<div class='ui-block-a cl_td_symbol_data cl_div_symbol_g999r  cl_td_symbol_label2'>Gold (RTGS)</div>	
+					<div class='ui-block-b cl_td_symbol_data cl_div_symbol_g999r'> <span id="id_span_data_symbol_g999r_bid"></span></div>	
+					<div class='ui-block-c cl_td_symbol_data cl_div_symbol_g999r'><span id="id_span_data_symbol_g999r_ask"></span></div>
+					
+					<div class='ui-block-a cl_td_symbol_data cl_div_symbol_g999t  cl_td_symbol_label2'>Gold (TCS)</div>	
+					<div class='ui-block-b cl_td_symbol_data cl_div_symbol_g999t'> <span id="id_span_data_symbol_g999t_bid"></span></div>	
+					<div class='ui-block-c cl_td_symbol_data cl_div_symbol_g999t'><span id="id_span_data_symbol_g999t_ask"></span></div>
+					
+					<div class='ui-block-a cl_td_symbol_data cl_div_symbol_gft999r  cl_td_symbol_label2'>Gold FT(RTGS)</div>	
+					<div class='ui-block-b cl_td_symbol_data cl_div_symbol_gft999r'> <span id="id_span_data_symbol_gft999r_bid"></span></div>	
+					<div class='ui-block-c cl_td_symbol_data cl_div_symbol_gft999r'><span id="id_span_data_symbol_gft999r_ask"></span></div>
+					
+					<div class='ui-block-a cl_td_symbol_data cl_div_symbol_gft999t  cl_td_symbol_label2'>Gold FT(TCS)</div>	
+					<div class='ui-block-b cl_td_symbol_data cl_div_symbol_gft999t'> <span id="id_span_data_symbol_gft999t_bid"></span></div>	
+					<div class='ui-block-c cl_td_symbol_data cl_div_symbol_gft999t'><span id="id_span_data_symbol_gft999t_ask"></span></div>
+					
+					<div class='ui-block-a cl_td_symbol_data cl_div_symbol_s999r  cl_td_symbol_label2'>Silver (RTGS)</div>	
+					<div class='ui-block-b cl_td_symbol_data cl_div_symbol_s999r'> <span id="id_span_data_symbol_s999r_bid"></span></div>	
+					<div class='ui-block-c cl_td_symbol_data cl_div_symbol_s999r'><span id="id_span_data_symbol_s999r_ask"></span></div>
+					
+					<div class='ui-block-a cl_td_symbol_data cl_div_symbol_s999t  cl_td_symbol_label2'>Silver (TCS)</div>	
+					<div class='ui-block-b cl_td_symbol_data cl_div_symbol_s999t'> <span id="id_span_data_symbol_s999t_bid"></span></div>	
+					<div class='ui-block-c cl_td_symbol_data cl_div_symbol_s999t'><span id="id_span_data_symbol_s999t_ask"></span></div>
+					
+				</div>
+				
+				
+		</div>
+
+		<div class="cl_vg_div_outer_marquee">	
+			<marquee
+				direction=left
+				scrolldelay="150"  
+				onmouseover="this.stop();" 
+				onmouseout="this.start();" 
+				class="cl_vg_marq_scrollMsg"
+				id="id_vg_scroll_marq" >
+				
+				Contact: <span class="cl_vg_span_contact1"> +91 8812 230997 </span> /  
+						 <span class="cl_vg_span_contact2">+91 9247023997 </span> / 
+						 <span class="cl_vg_span_contact3">+91 9491723997 </span>
+				
+						
+			</marquee>
+		</div>
+		
+		<!--
+	   <a href="#popup" id="id_btn_updateapp" data-role="button" data-rel="dialog" data-transition="pop" data-theme="a">
+			Update App
+		</a>
+		
+	   <script>
+			//$('#id_btn_updateapp').buttonMarkup({ inline: true });
+			$('#id_btn_updateapp').css("display", "none");
+	   </script>
+	   -->
+
+	   
+   
+	</div><!-- /content -->
+
+	
+	<!--
+	<div data-role="footer" data-position="fixed" data-theme="a" style="background-color:#F0F097;">
+	<h1>
+	   <div class="cl_divPoweredBy">
+			<span style="color:#33FC21;">Powered by</span> 
+			<span style="color:#FAFF69;">magic</span><span style="color:#33FC21;">Bul</span>   
+	   </div>
+</h1>	   
+	</div>
+	-->
+	
+	
+</div><!-- /page -->
+
+
+
+<div data-role="page" id="popup">
+
+	<div data-role="header" data-theme="e">
+		<h1>Update App</h1>
+	</div><!-- /header -->
+
+	<div data-role="content" data-theme="d">	
+		<p> Dear Customer, Please update latest version of this App from Store to enjoy new features. </p>
+		<p><a href="#mainpage" data-rel="back" data-role="button" data-inline="true" data-icon="arrow-l">Back</a></p>	
+	</div><!-- /content -->
+	
+	<div data-role="footer">
+		<h4>Thank You</h4>
+	</div><!-- /footer -->
+</div><!-- /page popup -->
+
+</body>
+</html>
