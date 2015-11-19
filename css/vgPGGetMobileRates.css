@@ -15,11 +15,18 @@ h4
 
 }
 
+.cl_div_grid_wrapper
+{
+	width: 100%;
+}
+
 .cl_div_grid_comex
 {
 	display: block;
 	border-radius: 5px;
 	background-color: #FCFCB8;
+	padding: 0px;
+	margin:0px;
 }
 
 .cl_td_comex_label
@@ -58,7 +65,8 @@ h4
 	display: block;
 	border-radius: 5px;
 	background-color: #FCFCB8;
-	
+	padding: 0px;
+	margin:0px;
 }
 
 .cl_td_symbol_label
