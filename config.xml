@@ -2,7 +2,7 @@
     <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.phonegap.vasavigold.live"
-        versionCode="2" 
+        versionCode="3" 
         version   = "1.0.0">
 
 
@@ -21,6 +21,10 @@
 	<gap:platform name="blackberry" />
 	<gap:platform name="winphone" />
 
+	<!-- New feture required for Phonegap Version > cli-5.2.0 -->
+	<access origin="*" />
+	<gap:plugin name="cordova-plugin-whitelist" source="npm" />
+
 	<icon src="icon.png" gap:platform="android" gap:density="ldpi" />
 	<icon src="icon.png" gap:platform="android" gap:density="mdpi" />
 	<icon src="icon.png" gap:platform="android" gap:density="hdpi" />
@@ -33,4 +37,6 @@
 	<!-- Required only Notification permission -->
 	<feature name="http://api.phonegap.com/1.0/notification"/>
 
+
+	
 </widget>
