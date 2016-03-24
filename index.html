@@ -53,6 +53,23 @@
 	
 	
 	<div data-role="content">	
+		<div class="cl_vg_div_outer_marquee">	
+			<marquee
+				direction=left
+				scrolldelay="150"  
+				onmouseover="this.stop();" 
+				onmouseout="this.start();" 
+				class="cl_vg_marq_scrollMsg"
+				id="id_vg_scroll_marq" >
+				
+				Contact: <span class="cl_vg_span_contact1"> +91 8812 230997 </span> /  
+						 <span class="cl_vg_span_contact2">+91 9247023997 </span> / 
+						 <span class="cl_vg_span_contact3">+91 9491723997 </span>
+				
+						
+			</marquee>
+		</div>
+		
 		
 		<div class="ui-grid-a cl_div_grid_wrapper" id="id_div_grid_wrapper">
 				<!-- Default it to No Steaming -->
@@ -110,22 +127,7 @@
 				
 		</div>
 
-		<div class="cl_vg_div_outer_marquee">	
-			<marquee
-				direction=left
-				scrolldelay="150"  
-				onmouseover="this.stop();" 
-				onmouseout="this.start();" 
-				class="cl_vg_marq_scrollMsg"
-				id="id_vg_scroll_marq" >
-				
-				Contact: <span class="cl_vg_span_contact1"> +91 8812 230997 </span> /  
-						 <span class="cl_vg_span_contact2">+91 9247023997 </span> / 
-						 <span class="cl_vg_span_contact3">+91 9491723997 </span>
-				
-						
-			</marquee>
-		</div>
+		
 		
 		
 	   
@@ -153,14 +155,14 @@
 			  <a href="#" data-rel="back" data-role="button"  data-theme="b" 
 				data-icon="delete" data-iconpos="notext" class="ui-btn-right">&nbsp;</a>
 				
-				<p style="color:black; background-color: #33CCFF;padding: 10px;">Booking Contact <span style="font-size: 8pt;color:blue;"> (Click to Call)</span> </p>
+				<p style="color:black; background-color: #33CCFF;padding: 10px;">Booking Contact <span style="font-size: 8pt;color:blue;"> (Touch to Call)</span> </p>
 				<table>
 					<tr>
 						<td> 
 							<a href="#" data-role="button" data-icon="phone" data-iconpos="notext">&nbsp;</a>					
 						</td>
 						
-						<td> &nbsp;&nbsp;08812230997</td>
+						<td> &nbsp;&nbsp; <a href="tel:08812230997">08812230997</a></td>
 					</tr>
 					
 					<tr>
@@ -169,7 +171,7 @@
 						</td>
 					
 					
-						<td> &nbsp;&nbsp;9247023997</td>
+						<td> &nbsp;&nbsp;<a href="tel:9247023997">9247023997</a></td>
 					</tr>	
 					
 					<tr>
@@ -177,14 +179,14 @@
 							<a href="#" data-role="button" data-icon="user" data-iconpos="notext">&nbsp;</a>					
 						</td>
 							
-						<td> <span style="font-size: 10pt;color:yellow;">(Mouli)</span> 9491723997</td>
+						<td> <span style="font-size: 10pt;color:yellow;">(Mouli)</span> <a href="tel:9491723997">9491723997</a></td>
 					</tr>	
 					<tr>
 						<td> 
 							<a href="#" data-role="button" data-icon="user" data-iconpos="notext">&nbsp;</a>					
 						</td>
 							
-						<td> <span style="font-size: 10pt;color:yellow;">(Sai Krishna)</span> 9030023997</td>
+						<td> <span style="font-size: 10pt;color:yellow;">(Sai Krishna)</span> <a href="tel:9030023997">9030023997</a></td>
 					</tr>		
 				
 				
@@ -245,19 +247,22 @@
 		
 		
 		<div data-role="popup" id="myPopupRTGS" class="ui-content" 
-			data-overlay-theme="b" style="background-color: #0FA807;">
+			data-overlay-theme="b" style="background-color: #B53A09;">
 			
 			  <a href="#" data-rel="back" data-role="button"  data-theme="b" 
 				data-icon="delete" data-iconpos="notext" class="ui-btn-right">&nbsp;</a>
 		
-				<table>
+				<table class="cl_tbl_bankinfo">
 					<tr>
 						<td> 
 							<img src="images/icon_bank.png" />
 							
 						</td>
 						<td vertical-align='middle'>
-							<span style="font-size: 14pt; font-weight: bold; vertical-align:middle;">Bank Details</span></td>
+							<span style="padding-left:10px;font-size: 14pt; font-weight: bold; vertical-align:middle;">
+							Bank Details
+							</span>
+						</td>
 						
 					</tr>
 					<tr>

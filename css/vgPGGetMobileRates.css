@@ -32,15 +32,28 @@ h4
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5393C5', endColorstr='#6FACD5',GradientType=0 ); /* IE6-9 */       
 }
 
+.cl_tbl_bankinfo
+{
+	border: 0px;
+	border-collapse: collpase;
+}
+
+.cl_tbl_bankinfo tr td
+{
+	border: 0px;
+	border-collapse: collpase;
+	
+}
 .cl_td_banklabel
 {
 	font-size: 10pt;
+	padding: 1.5vh 0px;
 	
 }
 
 .cl_td_bankdata
 {
-	padding-left: 5px;
+	padding: 1.5vh 5px;
 	font-size: 10pt;
 }
 
@@ -215,7 +228,7 @@ h4
 .cl_vg_div_outer_marquee
 {
 	background-color: rgba(180,10,120,0.9);
-	margin-top: 10px ;
+	margin-bottom: 3px;
 	
 }
 .cl_vg_marq_scrollMsg

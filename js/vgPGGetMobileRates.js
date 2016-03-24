@@ -3,10 +3,10 @@ jsGlobalColorRateUp				=	'#58BA16';
 jsGlobalColorRateDown			=	'#FC1938';
 jsGlobalColorRateUnchanged		=	'#000000';
 jsGlobalDataStreamingOffHTML	=	"<div class='cl_stream_off' ><span style='color:#E35E1B'>oops!!! </span>&nbsp; No Data Connection...   </div>";
-jsGlobalUserVisitURL="http://local_vasavigold/VGDynamic/vgPGUpdateMobileUserVisitCount.php";
-jsGlobalJsonpUrl = 'http://local_vasavigold/VGDynamic/vgPGGetMobileRatesDynGet.php';
-//jsGlobalUserVisitURL="http://www.vasavigold.com/VGDynamic/vgPGUpdateMobileUserVisitCount.php";
-//jsGlobalJsonpUrl = 'http://www.vasavigold.com/VGDynamic/vgPGGetMobileRatesDynGet.php';
+//jsGlobalUserVisitURL="http://local_vasavigold/VGDynamic/vgPGUpdateMobileUserVisitCount.php";
+//jsGlobalJsonpUrl = 'http://local_vasavigold/VGDynamic/vgPGGetMobileRatesDynGet.php';
+jsGlobalUserVisitURL="http://www.vasavigold.com/VGDynamic/vgPGUpdateMobileUserVisitCount.php";
+jsGlobalJsonpUrl = 'http://www.vasavigold.com/VGDynamic/vgPGGetMobileRatesDynGet.php';
 
 $(document).on('vclick', 'a', function(e){ 			
 	var jsVarPrevDefault;
