@@ -37,7 +37,12 @@
 	<input type="hidden" id="id_vg_hid_mob_param7" 		value="0" />
 	<input type="hidden" id="id_vg_hid_mob_param8" 		value="0" />
 	<input type="hidden" id="id_vg_hid_mob_param9" 		value="0" />
-	<input type="hidden" id="id_vg_hid_mob_param10" 		value="0" />
+	<input type="hidden" id="id_vg_hid_mob_param10" 	value="0" />
+	<input type="hidden" id="id_vg_hid_mob_param11" 	value="0" />
+	<input type="hidden" id="id_vg_hid_mob_param12" 	value="0" />
+	<input type="hidden" id="id_vg_hid_mob_param13" 	value="0" />
+	<input type="hidden" id="id_vg_hid_mob_param14" 	value="0" />
+	<input type="hidden" id="id_vg_hid_mob_param15" 	value="0" />
 	
 	
 <div data-role="page" id="mainpage" data-theme="b"   class="cl_div_content">
@@ -46,6 +51,7 @@
 	<div data-role="header" data-theme="a" style='background-color:#F7F763; height: 30px;'>
 		<div style="text-align:center;">
 			
+			<img  src="images/logo_vg.png"   />
 			<img  src="images/vg_logo_mobile.jpg"   />
 			
 		</div>
@@ -60,13 +66,8 @@
 				onmouseover="this.stop();" 
 				onmouseout="this.start();" 
 				class="cl_vg_marq_scrollMsg"
-				id="id_vg_scroll_marq" >
-				
-				Contact: <span class="cl_vg_span_contact1"> +91 8812 230997 </span> /  
-						 <span class="cl_vg_span_contact2">+91 9247023997 </span> / 
-						 <span class="cl_vg_span_contact3">+91 9491723997 </span>
-				
-						
+				id="id_vg_scroll_marq" >				
+				&nbsp;						
 			</marquee>
 		</div>
 		
@@ -92,7 +93,7 @@
 					<div class='ui-block-b cl_td_comex_data cl_div_comex_usdinr'> <span id="id_span_data_comex_u_bid"></span></div>	
 					<div class='ui-block-c cl_td_comex_data cl_div_comex_usdinr'><span id="id_span_data_comex_u_ask"></span></div>
 				</div>
-				<br/>
+				
 				<div class="ui-grid-b cl_div_grid_symbol" id="id_div_grid_symbol">
 					<div class='ui-block-a cl_td_symbol_label' >SYMBOL</div>	
 					<div class='ui-block-b cl_td_symbol_label' >We Buy</div>	
@@ -124,6 +125,31 @@
 					
 				</div>
 				
+				<div class="ui-grid-a cl_div_grid_assoc" id="id_div_grid_assoc">
+					<div class="ui-grid-solo cl_div_assoc_hrow1">
+						<div class="ui-block-a">Association Rates</div>
+					</div>		
+						
+					<div class='ui-block-a cl_td_symbol_data cl_div_symbol_assoc_g  cl_td_symbol_label2'>
+						Gold <span style="font-size:8pt;color:gray;">(22ct 8gms) </span>
+					</div>	
+					<div class='ui-block-b cl_td_symbol_data cl_div_symbol_assoc_g'> 
+						<span id="id_span_data_symbol_assoc_g_bid" style="display:none;"></span>
+						<span id="id_span_data_symbol_assoc_g_ask" style="font-size: 12pt;"></span>
+					</div>	
+					
+					
+					<div class='ui-block-a cl_td_symbol_data cl_div_symbol_assoc_s  cl_td_symbol_label2'>
+						Silver <span style="font-size:8pt;color:gray;">(10 gms)</span>
+					</div>	
+					<div class='ui-block-b cl_td_symbol_data cl_div_symbol_assoc_s'>
+						<span id="id_span_data_symbol_assoc_s_bid"  style="display:none;"></span>
+						<span id="id_span_data_symbol_assoc_s_ask" style="font-size: 12pt;"></span>
+					</div>	
+					
+					
+				</div>
+				
 				
 		</div>
 
@@ -148,6 +174,19 @@
 			</ul>
 		</div>
 		
+		<div style="background-color: #B03A48;">
+			<div class="ui-grid-a">
+				<div class="ui-block-a cl_div_footer_copyright">
+					Copyright &copy 
+					<script type='text/javascript'>document.write( new Date().getFullYear());</script>
+					by Vasavi Gold
+				</div>
+				
+				<div class="ui-block-b cl_divPoweredBy">
+					Powered by magicBul
+				</div>
+				
+		</div>
 			
 		<div data-role="popup" id="myPopupBooking" class="ui-content" 
 			data-overlay-theme="b" style="background-color: #022E7A;">

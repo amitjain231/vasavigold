@@ -3,10 +3,14 @@ jsGlobalColorRateUp				=	'#58BA16';
 jsGlobalColorRateDown			=	'#FC1938';
 jsGlobalColorRateUnchanged		=	'#000000';
 jsGlobalDataStreamingOffHTML	=	"<div class='cl_stream_off' ><span style='color:#E35E1B'>oops!!! </span>&nbsp; No Data Connection...   </div>";
-//jsGlobalUserVisitURL="http://local_vasavigold/VGDynamic/vgPGUpdateMobileUserVisitCount.php";
-//jsGlobalJsonpUrl = 'http://local_vasavigold/VGDynamic/vgPGGetMobileRatesDynGet.php';
-jsGlobalUserVisitURL="http://www.vasavigold.com/VGDynamic/vgPGUpdateMobileUserVisitCount.php";
-jsGlobalJsonpUrl = 'http://www.vasavigold.com/VGDynamic/vgPGGetMobileRatesDynGet.php';
+//jsGlobalUserVisitURL	= "http://local_vasavigold/VGDynamic/vgPGUpdateMobileUserVisitCount.php";
+//jsGlobalGetScrollMsgURL	= "http://local_vasavigold/VGDynamic/VGPGGetMobileScrollMessage.php";
+//jsGlobalJsonpUrl 		= "http://local_vasavigold/VGDynamic/vgPGGetMobileRatesDynGet.php";
+
+jsGlobalUserVisitURL		= "http://www.vasavigold.com/VGDynamic/vgPGUpdateMobileUserVisitCount.php";
+jsGlobalGetScrollMsgURL	    = "http://www.vasavigold.com/VGDynamic/VGPGGetMobileScrollMessage.php";
+jsGlobalJsonpUrl			= "http://www.vasavigold.com/VGDynamic/vgPGGetMobileRatesDynGet.php";
+
 
 $(document).on('vclick', 'a', function(e){ 			
 	var jsVarPrevDefault;
@@ -41,13 +45,71 @@ function initVGMobileApp()
 {
 	$('#id_btn_updateapp').css("display", "none");
 	
-	// Update Mobile User Visit Count
-	jsAprAjaxUdpateUserVisitCount();
-	
 	// Load Rates	
 	jsMobRefVGRates();	
 	
+	// Get Scroll Message
+	jsAprAjaxGetScrollMsg();
+	
+	// Update Mobile User Visit Count
+	jsAprAjaxUdpateUserVisitCount();
+	
+	
+	
 }
+
+function jsAprAjaxGetScrollMsg()
+{
+	var jsParams, jspin;	
+	jspin = "18000101";
+	jsParams = "";
+	jsParams = jsParams + "PIN=" + jspin;
+	
+	$.ajax({type:						"GET", 
+					async:				"true",
+					url:				jsGlobalGetScrollMsgURL,
+					dataType: 			"jsonp",
+					data: 				jsParams,
+					crossDomain:		true,          
+					cache:				false, 
+					contentType: 		"application/json; charset=utf-8",
+					dataType: 			"jsonp",
+					jsonp: 				"callback",
+					jsonpCallback: 		"jsProcessScrollJSONPResult",
+					success: 			onAjaxAprGetScrollMsgSuccess,
+					error: 				onAjaxAprGetScrollMsgError
+		});	
+		
+}	//End jsAprAjaxGetScrollMsg
+
+function onAjaxAprGetScrollMsgSuccess( jsResult)
+{
+	// Do Nothing
+}
+
+function onAjaxAprGetScrollMsgError( jsXhrObj )
+{
+	// Do Nothing
+}
+
+
+
+function jsProcessScrollJSONPResult( jsonData )	
+{
+	var  jsCode, jsScrollMsg;
+	
+	jsCode	= 	jsonData.CODE;
+	if( jsCode == "S" )
+	{
+		jsScrollMsg		= 	jsonData.SCROLLMSG;
+		$('#id_vg_scroll_marq').css("display", "block");
+		document.getElementById("id_vg_scroll_marq").innerHTML = jsScrollMsg;		
+	}
+
+	
+}	// End jsProcessScrollJSONPResult
+
+
 
 function jsAprAjaxUdpateUserVisitCount()
 {
@@ -138,6 +200,7 @@ function jsMobUpdVGRates()
 	// Get Hidden values
 	var jsCurrParam1,  jsCurrParam2, jsCurrParam3, jsCurrParam4, jsCurrParam5;
 	var jsCurrParam6,  jsCurrParam7, jsCurrParam8, jsCurrParam9, jsCurrParam10;
+	var jsCurrParam11,  jsCurrParam12, jsCurrParam13, jsCurrParam14, jsCurrParam15;
 	
 	jsCurrParam1 		   = document.getElementById('id_vg_hid_mob_param1').value;
 	jsCurrParam2 		    = document.getElementById('id_vg_hid_mob_param2').value;
@@ -149,6 +212,11 @@ function jsMobUpdVGRates()
 	jsCurrParam8			= document.getElementById('id_vg_hid_mob_param8').value;
 	jsCurrParam9			= document.getElementById('id_vg_hid_mob_param9').value;
 	jsCurrParam10			= document.getElementById('id_vg_hid_mob_param10').value;
+	jsCurrParam11			= document.getElementById('id_vg_hid_mob_param11').value;
+	jsCurrParam12			= document.getElementById('id_vg_hid_mob_param12').value;
+	jsCurrParam13			= document.getElementById('id_vg_hid_mob_param13').value;
+	jsCurrParam14			= document.getElementById('id_vg_hid_mob_param14').value;
+	jsCurrParam15			= document.getElementById('id_vg_hid_mob_param15').value;
 	
 	jsParamStr='';
 	jsParamStr = jsParamStr + 'PIN=' + jsUTCDateStr;
@@ -172,7 +240,16 @@ function jsMobUpdVGRates()
 	jsParamStr = jsParamStr + 'P009=' + jsCurrParam9;
 	jsParamStr = jsParamStr + '&';
 	jsParamStr = jsParamStr + 'P010=' + jsCurrParam10;
-	
+	jsParamStr = jsParamStr + '&';
+	jsParamStr = jsParamStr + 'P011=' + jsCurrParam11;
+	jsParamStr = jsParamStr + '&';
+	jsParamStr = jsParamStr + 'P012=' + jsCurrParam12;
+	jsParamStr = jsParamStr + '&';
+	jsParamStr = jsParamStr + 'P013=' + jsCurrParam13;
+	jsParamStr = jsParamStr + '&';
+	jsParamStr = jsParamStr + 'P014=' + jsCurrParam14;
+	jsParamStr = jsParamStr + '&';
+	jsParamStr = jsParamStr + 'P015=' + jsCurrParam15;
 	
 	$.ajax({type:						"GET", 
 					async:				"true",
@@ -250,7 +327,7 @@ function jsProcessJSONPResult( jsonData )
 		{
 			$('#id_btn_updateapp').css("display", "none");
 		}
-		
+		*/
 		
 		if( jsComexFlag == "Y" )
 		{
@@ -264,12 +341,14 @@ function jsProcessJSONPResult( jsonData )
 		if( jsRatesFlag == "Y" )
 		{
 			$('#id_div_grid_symbol').css("display", "block");
+			$('#id_div_grid_assoc').css("display", "block");
 		}
 		else
 		{
 			$('#id_div_grid_symbol').css("display", "none");
+			$('#id_div_grid_assoc').css("display", "none");
 		}
-		*/
+		
 		
 		for (var i=1; i< jsonData.RESULT.length; i++)
 		{
@@ -361,7 +440,24 @@ function jsProcessJSONPResult( jsonData )
 					jsValueAsk 		= jsAsk;
 					jsClassDivRow	= "cl_div_symbol_s999t";
 					jsContractOnOffFlag = jsRatesFlag;
-				break;				
+				break;
+				case "ASSOCG":
+					jsBidId			= "id_span_data_symbol_assoc_g_bid";
+					jsAskId			= "id_span_data_symbol_assoc_g_ask";
+					jsValueBid 		= jsBid;
+					jsValueAsk 		= jsAsk;
+					jsClassDivRow	= "cl_div_symbol_assoc_g";
+					jsContractOnOffFlag = jsRatesFlag;
+				break;
+				case "ASSOCS":
+					jsBidId			= "id_span_data_symbol_assoc_s_bid";
+					jsAskId			= "id_span_data_symbol_assoc_s_ask";
+					jsValueBid 		= jsBid;
+					jsValueAsk 		= jsAsk;
+					jsClassDivRow	= "cl_div_symbol_assoc_s";
+					jsContractOnOffFlag = jsRatesFlag;
+				break;
+				
 			}
 		
 			if( jsAct == 'Y' && jsContractOnOffFlag == 'Y' )
@@ -395,49 +491,8 @@ function jsProcessJSONPResult( jsonData )
 
 			//---- Update Hidden fields --------->
 			jsHidFieldId = 'id_vg_hid_mob_param' + i.toString();
-			document.getElementById(jsHidFieldId).value	=	jsAsk;
+			document.getElementById(jsHidFieldId).value	=	jsAsk;		
 			
-			/*
-			
-			if( jsAct == 'Y' )
-			{
-				jsLine1	=	"<div class='ui-block-a cl_td_label' >" 
-								+ jsDesc1 
-								+ "&nbsp;<span class='cl_td_label_2'>"
-								+ jsDesc2
-								+ "</span></div>";
-						
-				//------- Direction -------->		
-				if( jsDir == "-1" )
-				{					
-					jsDataBKColor = jsGlobalColorRateDown;
-				}
-				else if( jsDir == "1" )
-				{					
-					jsDataBKColor = jsGlobalColorRateUp;
-				}
-				else
-				{
-					jsDataBKColor = jsGlobalColorRateUnchanged;
-				}							
-				
-				
-				jsLine2	=	"<div class='ui-block-b cl_td_data' style='background-color: " + jsDataBKColor + " '> "
-								//+ jsCsymLine
-								+ jsAsk
-								+ "</div>";
-								
-				jsGridDivObj.innerHTML +=	jsLine1.toString() + jsLine2.toString();
-				
-				
-				//---- Update Hidden fields --------->
-				jsHidFieldId = 'id_vg_hid_mob_param' + i.toString();
-				document.getElementById(jsHidFieldId).value	=	jsAsk;
-				
-				
-			
-			}			// End check for jsAct
-			*/
 			
 		}			// End for loop JSON loop
 	}				// Check for Success flag

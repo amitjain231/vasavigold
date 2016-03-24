@@ -70,7 +70,7 @@ h4
 
 .cl_div_grid_comex
 {
-	display: block;
+	display: none;
 	border-radius: 5px;
 	background-color: #FCFCB8;
 	padding: 0px;
@@ -119,12 +119,13 @@ h4
 
 .cl_div_grid_symbol
 {
-	display: block;
+	display: none;
 	border-radius: 5px;
 	background-color: #FCFCB8;
 	padding: 0px;
-	margin: 0px;
+	margin-top: 2px;
 }
+
 
 .cl_td_symbol_label
 {
@@ -216,14 +217,28 @@ h4
 	border-bottom:1px solid gray; 
 }
 
-.cl_divPoweredBy
+.cl_div_grid_assoc
 {
-	margin-top: 10px;
-	text-align: center;
-	font-family: arial,verdana,sans-serif;
-	font-size: 10pt;
-	font-weight: bold;	
+	display: block;
+	border-radius: 5px;
+	background-color: #FCFCB8;
+	padding: 0px;
+	margin-top: 2px;	
 }
+
+.cl_div_assoc_hrow1
+{
+	text-align: center;
+	font-size: 10pt;
+	background: #E69807; /* Old browsers */
+	background: linear-gradient( #E69807,#000000 ) repeat scroll 0 0 #E69807 !important;
+	background: -moz-linear-gradient( #E69807,#000000 ) repeat scroll 0 0 #E69807 !important; /* FF3.6+ */
+	background: -webkit-linear-gradient( #E69807,#000000 ) repeat scroll 0 0 #E69807 !important; /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient( #E69807,#000000 ) repeat scroll 0 0 #E69807 !important; /* Opera 11.10+ */
+	background: -ms-linear-gradient( #E69807,#000000 ) repeat scroll 0 0 #E69807 !important; /* IE10+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E69807', endColorstr='#000000',GradientType=0 ); /* IE6-9 */ 
+}
+
 
 .cl_vg_div_outer_marquee
 {
@@ -237,6 +252,7 @@ h4
 	font-family: arial;
 	font-size: 10pt;
 	font-weight: normal;
+	display: none;
 
 }
 
@@ -255,4 +271,18 @@ h4
 
 }
 
+.cl_div_footer_copyright
+{
+	text-align:center;
+	font-family: sans-serif;
+	font-size: 1.5vh;
+	font-weight: normal;
+}
 
+.cl_divPoweredBy
+{
+	text-align: center;
+	font-family: sans-serif;
+	font-size: 1.5vh;
+	font-weight: normal;	
+}
