@@ -219,7 +219,7 @@ h4
 
 .cl_div_grid_assoc
 {
-	display: block;
+	display: none;
 	border-radius: 5px;
 	background-color: #FCFCB8;
 	padding: 0px;
