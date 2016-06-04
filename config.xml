@@ -22,7 +22,8 @@
 	
 	
 	<access origin="*" />	
-	<plugin name='cordova-plugin-whitelist' spec='1.0.0' source='npm' />
+	<gap:plugin name='cordova-plugin-whitelist' spec='1.0.0' source='npm' />
+	<gap:plugin name="org.apache.cordova.splashscreen" />
 	<!-- <plugin name='cordova-plugin-splashscreen' spec='2.1.0' source='npm' /> -->
 	<allow-navigation href="http://*/*" />
 	<allow-intent href="http://*/*" />
@@ -36,15 +37,13 @@
     </platform>
 	
 	
-	<gap:plugin name="org.apache.cordova.splashscreen" />
+	
 	
 	
 	<!-- ANDROID * ANDROID * ANDROID -->
 	<preference name="SplashScreen" value="screen" />	
-	<preference name="SplashScreenDelay" value="2000"/>
+	<preference name="SplashScreenDelay" value="3000"/>
 	
-	<!--<preference name="SplashScreen" value="splash" />
-	<preference name="SplashScreenDelay" value="2000" /> -->
 	
 	<platform name="android">
 		<splash src="splash.png" density="port-ldpi" />
