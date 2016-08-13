@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html> 
 <head> 
+	<!-- Rupee Font -->	
+	 <link rel="stylesheet" 	type='text/css' href="css/rupee.css">
+	
+	
 	<title>Vasavi Gold</title> 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
+	
 	
 	<!--  Needs to be updated before publishing  End -->
 	
@@ -12,16 +17,15 @@
 	<link rel="stylesheet" href="css/jquery.mobile.structure-1.4.5.min.css" />
 	<link rel="stylesheet" href="css/jquery.mobile.theme-1.4.5.min.css" />
 	<link rel="shortcut icon" 	type="image/x-icon" href="images/favicon.ico" >
-	<link rel="icon" 					type="image/x-icon" href="images/favicon.ico" >
+	<link rel="icon" 			type="image/x-icon" href="images/favicon.ico" >
 	
-	
+		
 	<script src="js/jquery-2.1.4.min.js"></script>
 	<script src="js/jquery.mobile-1.4.5.min.js"></script>
 	
 	
-	<!-- Custom JS and css -->
-	<link rel="stylesheet" href="css/vgPGGetMobileRates.css?ts=20151118151899" />
-	<!-- <link rel='stylesheet' type='text/css' href='css/rupee.css'></link> -->
+	<!-- Custom JS and css -->	
+	<link rel="stylesheet" href="css/vgPGGetMobileRates.css?ts=20151118151899" />		
 	<script src="./js/vgPGGetMobileRates.js?ts=20151118151515"></script>
 
 	
@@ -81,17 +85,19 @@
 					<div class='ui-block-b cl_td_comex_label' >BID</div>	
 					<div class='ui-block-c cl_td_comex_label' >ASK</div>	
 
-					<div class='ui-block-a cl_td_comex_data cl_div_comex_gold  cl_td_comex_label2'>Gold </div>	
-					<div class='ui-block-b cl_td_comex_data cl_div_comex_gold'> <span id="id_span_data_comex_g_bid"></span></div>	
-					<div class='ui-block-c cl_td_comex_data cl_div_comex_gold'><span id="id_span_data_comex_g_ask"></span></div>
+					<div class='ui-block-a cl_td_comex_data cl_div_comex_gold'>Gold ($)</div>	
+					<div class='ui-block-b cl_td_comex_data cl_div_comex_gold'> <span class="cl_span_comex_data" id="id_span_data_comex_g_bid"></span></div>	
+					<div class='ui-block-c cl_td_comex_data cl_div_comex_gold'><span class="cl_span_comex_data" id="id_span_data_comex_g_ask"></span></div>
+					
+					<div class='ui-block-a cl_td_comex_data cl_div_comex_silver'>Silver ($)</div>	
+					<div class='ui-block-b cl_td_comex_data cl_div_comex_silver'> <span class="cl_span_comex_data" id="id_span_data_comex_s_bid"></span></div>	
+					<div class='ui-block-c cl_td_comex_data cl_div_comex_silver'><span class="cl_span_comex_data" id="id_span_data_comex_s_ask"></span></div>	
 				
-					<div class='ui-block-a cl_td_comex_data cl_div_comex_silver cl_td_comex_label2'>Silver </div>	
-					<div class='ui-block-b cl_td_comex_data cl_div_comex_silver'> <span id="id_span_data_comex_s_bid"></span></div>	
-					<div class='ui-block-c cl_td_comex_data cl_div_comex_silver'><span id="id_span_data_comex_s_ask"></span></div>	
-				
-					<div class='ui-block-a cl_td_comex_data cl_div_comex_usdinr cl_td_comex_label2'>USDINR </div>	
-					<div class='ui-block-b cl_td_comex_data cl_div_comex_usdinr'> <span id="id_span_data_comex_u_bid"></span></div>	
-					<div class='ui-block-c cl_td_comex_data cl_div_comex_usdinr'><span id="id_span_data_comex_u_ask"></span></div>
+					<div class='ui-block-a cl_td_comex_data cl_div_comex_usdinr'>
+						USDINR (<span class="WebRupee"> Rs.</span>)
+					</div>	
+					<div class='ui-block-b cl_td_comex_data cl_div_comex_usdinr'> <span class="cl_span_comex_data" id="id_span_data_comex_u_bid"></span></div>	
+					<div class='ui-block-c cl_td_comex_data cl_div_comex_usdinr'><span class="cl_span_comex_data" id="id_span_data_comex_u_ask"></span></div>
 				</div>
 				
 				
@@ -99,71 +105,85 @@
 					<div class='ui-block-a cl_td_symbol_label' >SYMBOL</div>	
 					<div class='ui-block-b cl_td_symbol_label' >We Sell</div>
 					
+					<div class='ui-block-a cl_td_symbol_data cl_div_symbol_g999r'>Gold (RTGS)</div>	
+					<div class='ui-block-b cl_td_symbol_data cl_div_symbol_g999r'>
+						<table style="margin:0px auto;">
+							<tr>
+								<td> <span class="WebRupee cl_WebRupee"> Rs.</span> </td>
+								<td><span class="cl_span_symbol_data" id="id_span_data_symbol_g999r_ask"></span></td>
+							</tr>
+						</table>
+					</div>
+					
+					
+					
+					<div class='ui-block-a cl_td_symbol_data cl_div_symbol_g999t'>Gold (TCS)</div>	
+					<div class='ui-block-b cl_td_symbol_data cl_div_symbol_g999t'>
+						<table style="margin:0px auto;">
+							<tr>
+								<td> <span class="WebRupee cl_WebRupee"> Rs.</span> </td>
+								<td><span class="cl_span_symbol_data" id="id_span_data_symbol_g999t_ask"></span></td>
+							</tr>
+						</table>
 						
-					<div class='ui-block-a cl_td_symbol_data cl_div_symbol_g999r  cl_td_symbol_label2'>Gold (RTGS)</div>	
-					<div class='ui-block-b cl_td_symbol_data cl_div_symbol_g999r'><span  id="id_span_data_symbol_g999r_ask"></span></div>
+					</div>
 					
 					
 					
-					<div class='ui-block-a cl_td_symbol_data cl_div_symbol_g999t  cl_td_symbol_label2'>Gold (TCS)</div>	
-					<div class='ui-block-b cl_td_symbol_data cl_div_symbol_g999t'><span  id="id_span_data_symbol_g999t_ask"></span></div>
+					<div class='ui-block-a cl_td_symbol_data cl_div_symbol_gft999r'>Gold FT(RTGS)</div>	
+					<div class='ui-block-b cl_td_symbol_data cl_div_symbol_gft999r'>
+						<table style="margin:0px auto;">
+							<tr>
+								<td> <span class="WebRupee cl_WebRupee"> Rs.</span> </td>
+								<td><span class="cl_span_symbol_data" id="id_span_data_symbol_gft999r_ask"></span></td>
+							</tr>
+						</table>
+					
+					</div>
 					
 					
 					
-					<div class='ui-block-a cl_td_symbol_data cl_div_symbol_gft999r  cl_td_symbol_label2'>Gold FT(RTGS)</div>	
-					<div class='ui-block-b cl_td_symbol_data cl_div_symbol_gft999r'><span  id="id_span_data_symbol_gft999r_ask"></span></div>
+					<div class='ui-block-a cl_td_symbol_data cl_div_symbol_gft999t'>Gold FT(TCS)</div>	
+					<div class='ui-block-b cl_td_symbol_data cl_div_symbol_gft999t'>
+						<table style="margin:0px auto;">
+							<tr>
+								<td> <span class="WebRupee cl_WebRupee"> Rs.</span> </td>
+								<td><span class="cl_span_symbol_data" id="id_span_data_symbol_gft999t_ask"></span></td>
+							</tr>
+						</table>
+						
+					</div>
 					
 					
 					
-					<div class='ui-block-a cl_td_symbol_data cl_div_symbol_gft999t  cl_td_symbol_label2'>Gold FT(TCS)</div>	
-					<div class='ui-block-b cl_td_symbol_data cl_div_symbol_gft999t'><span  id="id_span_data_symbol_gft999t_ask"></span></div>
+					<div class='ui-block-a cl_td_symbol_data cl_div_symbol_s999r'>Silver (RTGS)</div>	
+					<div class='ui-block-b cl_td_symbol_data cl_div_symbol_s999r'>
+						<table style="margin:0px auto;">
+							<tr>
+								<td> <span class="WebRupee cl_WebRupee"> Rs.</span>&nbsp;&nbsp;&nbsp;</td>
+								<td><span class="cl_span_symbol_data" id="id_span_data_symbol_s999r_ask"></span></td>
+							</tr>
+						</table>
+						
+					</div>
 					
 					
 					
-					<div class='ui-block-a cl_td_symbol_data cl_div_symbol_s999r  cl_td_symbol_label2'>Silver (RTGS)</div>	
-					<div class='ui-block-b cl_td_symbol_data cl_div_symbol_s999r'><span  id="id_span_data_symbol_s999r_ask"></span></div>
+					<div class='ui-block-a cl_td_symbol_data cl_div_symbol_s999t'>Silver (TCS)</div>	
+					<div class='ui-block-b cl_td_symbol_data cl_div_symbol_s999t'>
+						<table style="margin:0px auto;">
+							<tr>
+								<td> <span class="WebRupee cl_WebRupee"> Rs.</span>&nbsp;&nbsp;&nbsp;</td>
+								<td><span class="cl_span_symbol_data" id="id_span_data_symbol_s999t_ask"></span></td>
+							</tr>
+						</table>
 					
-					
-					
-					<div class='ui-block-a cl_td_symbol_data cl_div_symbol_s999t  cl_td_symbol_label2'>Silver (TCS)</div>	
-					<div class='ui-block-b cl_td_symbol_data cl_div_symbol_s999t'><span  id="id_span_data_symbol_s999t_ask"></span></div>
-					
+					</div>
 					
 					
 				</div>
 				
-				<!--
-				<div class="ui-grid-b cl_div_grid_symbol" id="id_div_grid_symbol">
-					<div class='ui-block-a cl_td_symbol_label' >SYMBOL</div>	
-					<div class='ui-block-b cl_td_symbol_label' >We Buy</div>	
-					<div class='ui-block-c cl_td_symbol_label' >We Sell</div>
-						
-					<div class='ui-block-a cl_td_symbol_data cl_div_symbol_g999r  cl_td_symbol_label2'>Gold (RTGS)</div>	
-					<div class='ui-block-b cl_td_symbol_data cl_div_symbol_g999r'> <span id="id_span_data_symbol_g999r_bid"></span></div>	
-					<div class='ui-block-c cl_td_symbol_data cl_div_symbol_g999r'><span style="font-size:13pt;" id="id_span_data_symbol_g999r_ask"></span></div>
-					
-					<div class='ui-block-a cl_td_symbol_data cl_div_symbol_g999t  cl_td_symbol_label2'>Gold (TCS)</div>	
-					<div class='ui-block-b cl_td_symbol_data cl_div_symbol_g999t'> <span id="id_span_data_symbol_g999t_bid"></span></div>	
-					<div class='ui-block-c cl_td_symbol_data cl_div_symbol_g999t'><span style="font-size:13pt;" id="id_span_data_symbol_g999t_ask"></span></div>
-					
-					<div class='ui-block-a cl_td_symbol_data cl_div_symbol_gft999r  cl_td_symbol_label2'>Gold FT(RTGS)</div>	
-					<div class='ui-block-b cl_td_symbol_data cl_div_symbol_gft999r'> <span id="id_span_data_symbol_gft999r_bid"></span></div>	
-					<div class='ui-block-c cl_td_symbol_data cl_div_symbol_gft999r'><span style="font-size:13pt;"  id="id_span_data_symbol_gft999r_ask"></span></div>
-					
-					<div class='ui-block-a cl_td_symbol_data cl_div_symbol_gft999t  cl_td_symbol_label2'>Gold FT(TCS)</div>	
-					<div class='ui-block-b cl_td_symbol_data cl_div_symbol_gft999t'> <span id="id_span_data_symbol_gft999t_bid"></span></div>	
-					<div class='ui-block-c cl_td_symbol_data cl_div_symbol_gft999t'><span style="font-size:13pt;"  id="id_span_data_symbol_gft999t_ask"></span></div>
-					
-					<div class='ui-block-a cl_td_symbol_data cl_div_symbol_s999r  cl_td_symbol_label2'>Silver (RTGS)</div>	
-					<div class='ui-block-b cl_td_symbol_data cl_div_symbol_s999r'> <span id="id_span_data_symbol_s999r_bid"></span></div>	
-					<div class='ui-block-c cl_td_symbol_data cl_div_symbol_s999r'><span style="font-size:13pt;"  id="id_span_data_symbol_s999r_ask"></span></div>
-					
-					<div class='ui-block-a cl_td_symbol_data cl_div_symbol_s999t  cl_td_symbol_label2'>Silver (TCS)</div>	
-					<div class='ui-block-b cl_td_symbol_data cl_div_symbol_s999t'> <span id="id_span_data_symbol_s999t_bid"></span></div>	
-					<div class='ui-block-c cl_td_symbol_data cl_div_symbol_s999t'><span style="font-size:13pt;"  id="id_span_data_symbol_s999t_ask"></span></div>
-					
-				</div>
-				-->
+				
 				
 				<div class="ui-grid-a cl_div_grid_assoc" id="id_div_grid_assoc">
 					<div class="ui-grid-solo cl_div_assoc_hrow1">
@@ -175,7 +195,15 @@
 					</div>	
 					<div class='ui-block-b cl_td_symbol_data cl_div_symbol_assoc_g'> 
 						<span id="id_span_data_symbol_assoc_g_bid" style="display:none;"></span>
-						<span id="id_span_data_symbol_assoc_g_ask" style="font-size: 12pt;"></span>
+						
+						<table style="margin:0px auto;">
+							<tr>
+								<td> <span class="WebRupee cl_WebRupee"> Rs.</span></td>
+								<td><span id="id_span_data_symbol_assoc_g_ask" style="font-size: 12pt;"></span></td>
+							</tr>
+						</table>
+						
+						
 					</div>	
 					
 					
@@ -184,7 +212,15 @@
 					</div>	
 					<div class='ui-block-b cl_td_symbol_data cl_div_symbol_assoc_s'>
 						<span id="id_span_data_symbol_assoc_s_bid"  style="display:none;"></span>
-						<span id="id_span_data_symbol_assoc_s_ask" style="font-size: 12pt;"></span>
+						
+						<table style="margin:0px auto;">
+							<tr>
+								<td> <span class="WebRupee cl_WebRupee"> Rs.</span></td>
+								<td><span id="id_span_data_symbol_assoc_s_ask" style="font-size: 12pt;"></span></td>
+							</tr>
+						</table>
+						
+						
 					</div>	
 					
 					

@@ -2,7 +2,7 @@
     <widget xmlns = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.phonegap.vasavigold.live"
-        versionCode="9" 
+        versionCode="10" 
         version   = "1.0.0">
 
 
@@ -19,8 +19,6 @@
 	
 	<gap:platform name="android" />
 	
-	
-	
 	<access origin="*" />	
 	<gap:plugin name='cordova-plugin-whitelist' spec='1.0.0' source='npm' />
 	<gap:plugin name="org.apache.cordova.splashscreen" />
@@ -35,9 +33,6 @@
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>
-	
-	
-	
 	
 	
 	<!-- ANDROID * ANDROID * ANDROID -->
